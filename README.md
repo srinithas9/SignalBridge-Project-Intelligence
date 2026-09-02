@@ -22,21 +22,44 @@ Proposed Solution
 An evidence-based, multi-stage AI system:
 
 
-Business Systems
-       ↓
-Information Collection
-       ↓
-Context & Recency Check
-       ↓
-Signal Detection
-       ↓
-Risk Assessment
-       ↓
-Situation Brief
-       ↓
-Human Review
-       ↓
-Final Decision
+                    ┌─────────────────────────┐
+                    │    Business Systems     │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │ Information Collection  │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │ Context & Recency Check │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │    Signal Detection     │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │     Risk Assessment     │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │     Situation Brief     │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │      Human Review       │
+                    └─────────────────────────┘
+                               │
+                               ▼
+                    ┌─────────────────────────┐
+                    │     Final Decision      │
+                    └─────────────────────────┘
 
 
 The system connects information from different teams, checks its context and recency, identifies signals, assesses risks using supporting evidence, and prepares a situation brief.
