@@ -25,36 +25,96 @@ During the AI trial, several problems were identified:
 
 SignalBridge uses an evidence-based, multi-stage AI workflow:
 
-Project Leader
-      ↓
-User Request
-      ↓
-Intent Parser
-      ↓
-Task Planner
-      ↓
-Orchestrator
-      ↓
- ┌────┼──────────────┐
- ↓    ↓              ↓
-Updates  Risk      Decisions
- Tool    Tool        Tool
- └────┼──────────────┘
-      ↓
-Context Manager
-      ↓
-Signal Analyzer
-      ↓
-Risk Analyzer
-      ↓
-Evidence Validator
-      ↓
-Situation Brief
-      ↓
-Guardrails
-      ↓
-Human Review
-      ↓
-Final Decision
-      ↓
-Evaluation / Monitoring
+┌──────────────────────────────┐
+│       👤 PROJECT LEADER      │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        💬 USER REQUEST       │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        🧠 INTENT PARSER     │
+│  Understand what is needed   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│         📋 TASK PLANNER      │
+│   Break request into tasks   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        🎯 ORCHESTRATOR       │
+│    Coordinates AI workflow   │
+└──────────────┬───────────────┘
+               │
+        ┌──────┼──────┐
+        ▼      ▼      ▼
+┌────────────┐ ┌────────────┐ ┌──────────────┐
+│ 📥 UPDATES │ │ ⚠️  RISKS  │ │ 📝 DECISIONS │
+│    TOOL    │ │    TOOL    │ │     TOOL     │
+└──────┬─────┘ └──────┬─────┘ └──────┬───────┘
+       │              │              │
+       └──────────────┼──────────────┘
+                      ▼
+          ┌──────────────────────────┐
+          │    🧩 CONTEXT MANAGER    │
+          │                          │
+          │ Project • Timestamp      │
+          │ Source • Relevance      │
+          │ Current Status           │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │    🔍 SIGNAL ANALYZER    │
+          │  Identify key signals    │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │     ⚠️ RISK ANALYZER     │
+          │ Connect cross-team info  │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │  📑 EVIDENCE VALIDATOR   │
+          │ Check supporting evidence│
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │     📄 SITUATION BRIEF   │
+          │ Risk • Evidence • Status │
+          │ Confidence • Recommendation│
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │       🛡️ GUARDRAILS      │
+          │ Evidence • Recency       │
+          │ Uncertainty • Safety     │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │      👤 HUMAN REVIEW     │
+          │    Project Leader        │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │      ✅ FINAL DECISION   │
+          │     Human Decision       │
+          └────────────┬─────────────┘
+                       │
+                       ▼
+          ┌──────────────────────────┐
+          │  📊 EVALUATION &         │
+          │     MONITORING           │
+          └──────────────────────────┘
